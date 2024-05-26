@@ -1,0 +1,121 @@
+.wrapper_center {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  background-color: #023E8A;
+}
+
+.action_link {
+  color: #fff !important;
+}
+
+.action_link:hover {
+  color: #CAF0F8 !important;
+}
+
+.logout {
+  color: #023E8A;
+}
+
+.root_list {
+  margin: 30px auto;
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+
+
+  border-radius: 8px;
+  background: #FFF;
+
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.10);
+}
+
+h1 {
+  color: #023E8A;
+  margin-bottom: 25px;
+}
+
+.list li {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 7px 10px;
+}
+
+.list a {
+  text-align: end;
+}
+
+li span,
+li strong {
+  color: #023E8A;
+}
+
+.column_title span {
+  font-weight: 700;
+}
+
+.column_title {
+  background: rgba(163, 211, 255, 0.961) !important;
+}
+
+.title {
+  margin-left: 10px;
+}
+
+.content {
+  margin-left: -10px;
+}
+
+.access {
+  margin-left: -10px;
+}
+
+.author {
+  margin-left: 40px;
+}
+
+.date {
+  margin-left: 60px;
+}
+
+.actions {
+  text-align: end;
+  margin-right: 20px;
+}
+
+.list {
+  padding: 0;
+}
+
+.list li:nth-child(even) {
+  background: rgba(190, 224, 254, 0.28)
+}
+
+.list li:nth-child(odd) {
+  background: rgba(163, 211, 255, 0.461);
+}
+
+.actionsB {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actionsB button {
+  width: 100px;
+  background-color: transparent;
+  border-radius: 5px;
+  color: #023E8A;
+  border-color: #023E8A;
+}

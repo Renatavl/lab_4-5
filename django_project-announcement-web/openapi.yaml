@@ -1,0 +1,190 @@
+openapi: 3.0.0
+info:
+  title: Announcement Service API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+components:
+  schemas:
+    Announcement:
+      type: object
+      properties:
+        id:
+          type: integer
+        user:
+          $ref: '#/components/schemas/User'
+        createDate:
+          type: string
+          format: date-time
+        subject:
+          type: string
+        title:
+          type: string
+        content:
+          type: string
+        access:
+          type: string
+          enum: [public, local]
+        location:
+          type: string
+    
+    User:
+      type: object
+      properties:
+        username:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+        location:
+          type: string
+
+paths:
+  /announcements:
+    get:
+      summary: Get all announcements
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Announcement  
+    post:
+      summary: Create a new announcement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Announcement'
+      responses:
+        '201':
+          description: Created
+      tags:
+        - Announcement  
+        
+  /announcements/public:
+    get:
+      summary: Get public announcements only
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Announcement  
+        
+  /announcements/local:
+    get:
+      summary: Get local announcements only
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Access denied
+      tags:
+        - Announcement  
+  /announcements/{id}:
+    get:
+      summary: Get an announcement by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      tags:
+        - Announcement  
+    put:
+      summary: Update an announcement by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Announcement'
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Access denied
+        '404':
+          description: Not Found
+      tags:
+        - Announcement  
+    delete:
+      summary: Delete an announcement by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: No Content
+        '403':
+          description: Access denied
+        '404':
+          description: Not Found
+      tags:
+        - Announcement    
+
+  /login:
+    post:
+      summary: Log in
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+      tags:
+        - User
+
+  /register:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+      tags:
+        - User 
+        
+  /logout:
+    post:
+      summary: Log out
+      responses:
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+      tags:
+        - User

@@ -1,0 +1,154 @@
+.block {
+  width: 30%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: #3C6BB6;
+  z-index: -1;
+}
+
+.public_list_title,
+.local_list_title,
+.user_list_title {
+  color: #023E8A;
+  padding-bottom: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 60px);
+  position: relative;
+  z-index: 3;
+}
+
+.public_list_container,
+.local_list_container,
+.user_list_container {
+  padding-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 30px;
+  border-radius: 10px;
+  width: 95%;
+  background-color: white;
+  text-align: left;
+}
+
+input,
+textarea,
+select {
+  margin-bottom: 15px;
+  border: 2px solid #3C6BB6;
+  border-radius: 10px;
+  width: 309px;
+  height: 40px;
+  padding: 0px 5px;
+  color: #3C6BB6;
+}
+
+label {
+  font-size: 14px;
+  line-height: 19.1px;
+  text-align: left;
+  color: #3C6BB6;
+  font-weight: 600;
+}
+
+input[type="submit"] {
+  background-color: #3C6BB6;
+  color: white;
+  font-size: 20px;
+}
+
+input:focus,
+input:active {
+  border: 2px solid #3C6BB6;
+  outline: none;
+}
+
+textarea {
+  margin-bottom: 15px;
+}
+
+textarea:focus,
+textarea:active {
+  border: 2px solid #3C6BB6;
+  outline: none;
+}
+
+select {
+  margin-bottom: 40px;
+}
+
+select:focus,
+select:active {
+  border: 2px solid #3C6BB6;
+  outline: none;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(190, 224, 254, 0.28);
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(163, 211, 255, 0.461);
+}
+
+th {
+  background-color: rgba(163, 211, 255, 0.461);
+  font-weight: 800;
+}
+
+table {
+  color: #023E8A;
+}
+
+tr>:first-child {
+  font-weight: 800;
+}
+
+a,
+a:focus,
+a:active {
+  color: #023E8A;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.root_card ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  color: #3C6BB6;
+}
+
+.root_card li {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  font-size: 18px;
+}
+
+
+.form_title2 {
+  color: #3C6BB6;
+  padding-bottom: 45px;
+  font-size: 30px;
+  text-align: center;
+}

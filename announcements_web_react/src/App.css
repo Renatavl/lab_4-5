@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+
+header {
+  color: white;
+  height: 50px;
+  padding-top: 10px;
+}
+
+.title {
+  margin-left: 95px;
+  color: #3c6bb6;
+}
+
+.top-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.top-menu .menu {
+  flex-grow: 2;
+  position: relative;
+  display: inline-block;
+}
+
+.top-menu .button-menu {
+  display: none;
+  font-size: 20px;
+  background-color: transparent;
+  padding: 2px 10px;
+  border-radius: 5px;
+  color: white;
+  box-shadow: none;
+  outline: none;
+  border: 1px solid white;
+}
+
+.top-menu ul {
+  list-style-type: none;
+  display: flex;
+  flex-grow: 2;
+  margin-right: 95px;
+  gap: 15px;
+}
+
+.top-menu li.access {
+  font-weight: 700;
+}
+
+.top-menu li.access a {
+  background-color: white;
+  color: #3c6bb6 !important;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.top-menu li.side {
+  margin-left: auto;
+}
+
+.top-menu li a {
+  display: block;
+  color: #3c6bb6;
+  font-weight: 700;
+  text-align: center;
+  padding: 14px 10px;
+  text-decoration: none;
+}
+
+.top-menu li a:hover {
+  color: rgba(60, 107, 182, 0.5568627451);
+}
+
+.dropdown-menu {
+  min-width: 100px;
+  max-width: 100px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .menu {
+    margin-left: auto;
+    flex-grow: unset;
+  }
+
+  .menu .button-menu {
+    display: block;
+    margin-left: auto;
+    margin-right: 33px;
+  }
+
+  .menu ul {
+    padding: 10px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    margin-right: 33px;
+    border-radius: 10px;
+  }
+
+  .menu ul li {
+    margin-bottom: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .menu .button-menu:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .menu ul a:hover {
+    background-color: #ddd;
+  }
+
+  .menu:hover ul {
+    display: block;
+  }
+
+  .title {
+    margin-left: 20px;
+    max-width: 300px;
+    font-size: 30px;
+  }
+}
